@@ -15,6 +15,9 @@ async function getItems() {
 	const url = 'https://austin.craigslist.org/search/sss?query=ps4&sort=rel';
 
 	await page.goto(url);
+
+	// Wait for elements with class "result-row" to appear on page
+	await page.waitFor('.result-row');
 }
 
 getItems();
