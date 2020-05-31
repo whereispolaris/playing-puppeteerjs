@@ -21,7 +21,15 @@ async function getItems() {
 
 	// Target "result-row" and pass a fuction ($$eval)
 	const results = await page.$$eval('.result-row', (rows) => {
-		return rows;
+		// Map results to new object: properties
+		return rows.map((row) => {
+			// Create properties object
+			const properties = {};
+			const titleElement = row.querySelector('.result-title');
+			properties.title = titleElement.innerText;
+			properties.url = titleElement.getAttribute('href');
+			return properties;
+		});
 	});
 
 	console.log(results);
