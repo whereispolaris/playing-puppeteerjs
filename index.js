@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-async function getItems() {
+(async () => {
 	// Launches browser
 	const browser = await puppeteer.launch();
 
@@ -35,6 +35,4 @@ async function getItems() {
 	console.log(results);
 
 	browser.close();
-}
-
-getItems();
+})();
