@@ -33,6 +33,8 @@ async function getItems() {
 	});
 
 	console.log(results);
+
+	browser.close();
 }
 
 getItems();
