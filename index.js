@@ -2,12 +2,7 @@ const puppeteer = require('puppeteer');
 
 async function getItems() {
 	// Launches browser
-	const browser = await puppeteer.launch({
-		// Show Chromium browser
-		headless: false,
-		// fix viewport bug
-		defaultViewport: null,
-	});
+	const browser = await puppeteer.launch();
 
 	// Opens new tab
 	const page = await browser.newPage();
