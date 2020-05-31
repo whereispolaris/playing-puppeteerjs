@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 async function getItems() {
 	// Launches browser
 	const browser = await puppeteer.launch({
+		// Show Chromium browser
 		headless: false,
 		// fix viewport bug
 		defaultViewport: null,
@@ -28,6 +29,10 @@ async function getItems() {
 			const titleElement = row.querySelector('.result-title');
 			properties.title = titleElement.innerText;
 			properties.url = titleElement.getAttribute('href');
+			const priceElement = row.querySelector('.result-price');
+			properties.price = priceElement ? priceElement.innerText : '';
+			const imageElement = row.querySelector('.swipe [data-index="0"] img');
+			properties.imageURL = imageElement ? imageElement.src : '';
 			return properties;
 		});
 	});
