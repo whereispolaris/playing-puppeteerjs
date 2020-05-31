@@ -18,6 +18,13 @@ async function getItems() {
 
 	// Wait for elements with class "result-row" to appear on page
 	await page.waitFor('.result-row');
+
+	// Target "result-row" and pass a fuction ($$eval)
+	const results = await page.$$eval('.result-row', (rows) => {
+		return rows;
+	});
+
+	console.log(results);
 }
 
 getItems();
