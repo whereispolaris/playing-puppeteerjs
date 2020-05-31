@@ -10,13 +10,11 @@ const getItem = () => {
 			},
 		])
 		.then((answers) => {
-			console.log(answers.searchItem);
+			searchCraigslist(answers.searchItem);
 		});
 };
 
-getItem();
-
-(async () => {
+async function searchCraigslist(item) {
 	// Launches browser
 	const browser = await puppeteer.launch();
 
@@ -24,7 +22,7 @@ getItem();
 	const page = await browser.newPage();
 
 	// Store URL in a variable
-	const url = 'https://austin.craigslist.org/search/sss?query=ps4&sort=rel';
+	const url = `https://austin.craigslist.org/search/sss?query=${item}`;
 
 	await page.goto(url);
 
@@ -51,4 +49,6 @@ getItem();
 	console.log(results);
 
 	browser.close();
-})();
+}
+
+getItem();
