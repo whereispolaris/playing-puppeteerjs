@@ -1,4 +1,20 @@
 const puppeteer = require('puppeteer');
+const inquirer = require('inquirer');
+
+const getItem = () => {
+	inquirer
+		.prompt([
+			{
+				message: 'What item would you like to search?',
+				name: 'searchItem',
+			},
+		])
+		.then((answers) => {
+			console.log(answers.searchItem);
+		});
+};
+
+getItem();
 
 (async () => {
 	// Launches browser
