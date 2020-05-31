@@ -5,7 +5,7 @@ const getItem = () => {
 	inquirer
 		.prompt([
 			{
-				message: 'What item would you like to search?',
+				message: 'What item would you like to search for?',
 				name: 'searchItem',
 			},
 		])
