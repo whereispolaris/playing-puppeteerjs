@@ -1,6 +1,6 @@
-# Playing With Puppeteer.js :dolls:
+# Playing With Puppeteer :dolls:
 
-Scraping App that uses Headless Chrome to check for items in Craigslist and returns the information in JSON.
+Scraping App that uses Google's Puppeteer libary to check for items in Craigslist and returns the information in JSON.
 
 Technologies used:
 
